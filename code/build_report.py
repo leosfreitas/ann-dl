@@ -476,8 +476,9 @@ nothing in the conclusions below depends on this choice &mdash; only the exact w
 <h3 id="ex2c">C &middot; Projection and metrics</h3>
 
 {figure("figures/fig4_pca.png",
-        "<b>Figure 4.</b> Both datasets under PCA. Dataset I separates into two offset blobs along PC1, which "
-        "alone carries " + pct(d1['evr_pc1']*100, 1) + " of the variance. Dataset II shows the core sitting inside "
+        "<b>Figure 4.</b> Both datasets under PCA. Dataset I spreads along PC1 &mdash; the two clouds still overlap "
+        "through the middle, but their centres are clearly offset, and PC1 alone carries "
+        + pct(d1['evr_pc1']*100, 1) + " of the variance. Dataset II shows the core sitting inside "
         "the shell &mdash; a bullseye no straight line can split, and the variance is spread almost evenly across "
         "all five components.")}
 
@@ -539,7 +540,7 @@ buy: a bullseye. If the optimal linear view still yields nested classes, no line
 
 <p>This maps each shell onto a tight interval on the real line. With the midpoint threshold
 <code>||x|| &lt; {thr:.4f}</code> (equivalently <code>||x||&sup2; &lt; {thr**2:.4f}</code>) the rule classifies
-<b>{d2['radius_rule_accuracy']*100:.2f}%</b> of the 1,000 points correctly &mdash; and the margin is not marginal:
+<b>{d2['radius_rule_accuracy']*100:.2f}%</b> of the 1,000 points correctly, with a comfortable margin:
 the gap between the largest core radius and the smallest shell radius is
 {d2['radius_min_1'] - d2['radius_max_0']:.4f}. Note that <code>f</code> is linear in the <em>squared</em>
 coordinates, which is precisely what a hidden layer supplies: given a non-linear activation, a network can
@@ -553,7 +554,7 @@ hidden layers exist.</p>
 <h2><span class="num">3</span>Real-world data: Spaceship Titanic</h2>
 
 <p>The first two exercises used data built to order. This one starts from a table with missing values in every
-column, categorical text, and spending figures spanning five orders of magnitude, and ends with a numeric matrix
+column, categorical text, and spending figures spanning four orders of magnitude, and ends with a numeric matrix
 whose every entry is safe to feed a <code>tanh</code> network.</p>
 
 <h3 id="ex3a">A &middot; Exploration</h3>

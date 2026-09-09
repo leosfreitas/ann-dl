@@ -330,7 +330,7 @@ nothing in the conclusions below depends on this choice &mdash; only the exact w
 
 <h3 id="ex2c">C &middot; Projection and metrics</h3>
 
-<figure><img src="figures/fig4_pca.png" alt=""><figcaption><b>Figure 4.</b> Both datasets under PCA. Dataset I separates into two offset blobs along PC1, which alone carries 50.0% of the variance. Dataset II shows the core sitting inside the shell &mdash; a bullseye no straight line can split, and the variance is spread almost evenly across all five components.</figcaption></figure>
+<figure><img src="figures/fig4_pca.png" alt=""><figcaption><b>Figure 4.</b> Both datasets under PCA. Dataset I spreads along PC1 &mdash; the two clouds still overlap through the middle, but their centres are clearly offset, and PC1 alone carries 50.0% of the variance. Dataset II shows the core sitting inside the shell &mdash; a bullseye no straight line can split, and the variance is spread almost evenly across all five components.</figcaption></figure>
 
 <div class="tablewrap"><table><caption><b>Geometry of the two datasets in the full 5D space.</b> Distances and radii are computed before any projection; PCA is reported for reference.</caption><thead><tr><th>Quantity</th><th class="num">Dataset I</th><th class="num">Dataset II</th></tr></thead><tbody><tr class="hl"><td>Distance between class centres &nbsp;<code>||c<sub>1</sub> &minus; c<sub>2</sub>||</code></td><td class="num">3.2282</td><td class="num">0.2662</td></tr><tr><td>Norm of centre 1 &nbsp;<code>||c<sub>1</sub>||</code></td><td class="num">0.1048</td><td class="num">0.0846</td></tr><tr><td>Norm of centre 2 &nbsp;<code>||c<sub>2</sub>||</code></td><td class="num">3.3190</td><td class="num">0.2660</td></tr><tr><td>Explained variance PC1</td><td class="num">50.04%</td><td class="num">21.59%</td></tr><tr><td>Explained variance PC2</td><td class="num">15.93%</td><td class="num">21.32%</td></tr><tr class="hl"><td><b>Explained variance PC1 + PC2</b></td><td class="num"><b>65.97%</b></td><td class="num"><b>42.91%</b></td></tr><tr><td>Mean radius, class 1</td><td class="num">2.1085</td><td class="num">1.9718</td></tr><tr><td>Mean radius, class 2</td><td class="num">4.1284</td><td class="num">5.0047</td></tr><tr><td>Largest radius, class 1</td><td class="num">4.9749</td><td class="num">3.2467</td></tr><tr><td>Smallest radius, class 2</td><td class="num">0.9507</td><td class="num">3.7522</td></tr></tbody></table></div>
 
@@ -383,7 +383,7 @@ buy: a bullseye. If the optimal linear view still yields nested classes, no line
 
 <p>This maps each shell onto a tight interval on the real line. With the midpoint threshold
 <code>||x|| &lt; 3.4883</code> (equivalently <code>||x||&sup2; &lt; 12.1679</code>) the rule classifies
-<b>100.00%</b> of the 1,000 points correctly &mdash; and the margin is not marginal:
+<b>100.00%</b> of the 1,000 points correctly, with a comfortable margin:
 the gap between the largest core radius and the smallest shell radius is
 0.5055. Note that <code>f</code> is linear in the <em>squared</em>
 coordinates, which is precisely what a hidden layer supplies: given a non-linear activation, a network can
@@ -397,7 +397,7 @@ hidden layers exist.</p>
 <h2><span class="num">3</span>Real-world data: Spaceship Titanic</h2>
 
 <p>The first two exercises used data built to order. This one starts from a table with missing values in every
-column, categorical text, and spending figures spanning five orders of magnitude, and ends with a numeric matrix
+column, categorical text, and spending figures spanning four orders of magnitude, and ends with a numeric matrix
 whose every entry is safe to feed a <code>tanh</code> network.</p>
 
 <h3 id="ex3a">A &middot; Exploration</h3>
