@@ -1,0 +1,269 @@
+{
+  "n_rows": 8693,
+  "n_cols": 14,
+  "target": {
+    "n_true": 4378,
+    "n_false": 4315,
+    "pct_true": 50.362360519958585,
+    "pct_false": 49.637639480041415
+  },
+  "missing": [
+    {
+      "column": "PassengerId",
+      "missing": 0,
+      "pct": 0.0
+    },
+    {
+      "column": "HomePlanet",
+      "missing": 201,
+      "pct": 2.312205222592891
+    },
+    {
+      "column": "CryoSleep",
+      "missing": 217,
+      "pct": 2.4962613597147127
+    },
+    {
+      "column": "Cabin",
+      "missing": 199,
+      "pct": 2.289198205452663
+    },
+    {
+      "column": "Destination",
+      "missing": 182,
+      "pct": 2.093638559760727
+    },
+    {
+      "column": "Age",
+      "missing": 179,
+      "pct": 2.0591280340503855
+    },
+    {
+      "column": "VIP",
+      "missing": 203,
+      "pct": 2.3352122397331185
+    },
+    {
+      "column": "RoomService",
+      "missing": 181,
+      "pct": 2.082135051190613
+    },
+    {
+      "column": "FoodCourt",
+      "missing": 183,
+      "pct": 2.105142068330841
+    },
+    {
+      "column": "ShoppingMall",
+      "missing": 208,
+      "pct": 2.392729782583688
+    },
+    {
+      "column": "Spa",
+      "missing": 183,
+      "pct": 2.105142068330841
+    },
+    {
+      "column": "VRDeck",
+      "missing": 188,
+      "pct": 2.1626596111814105
+    },
+    {
+      "column": "Name",
+      "missing": 200,
+      "pct": 2.300701714022777
+    },
+    {
+      "column": "Transported",
+      "missing": 0,
+      "pct": 0.0
+    }
+  ],
+  "missing_total": 2324,
+  "rows_any_missing": 2087,
+  "rows_any_missing_pct": 24.007822385827676,
+  "spend_stats_full": {
+    "RoomService": {
+      "mean": 224.687617481203,
+      "median": 0.0,
+      "max": 14327.0,
+      "pct_zero": 64.15506729552514,
+      "skew": 6.333014062092135
+    },
+    "FoodCourt": {
+      "mean": 458.07720329024676,
+      "median": 0.0,
+      "max": 29813.0,
+      "pct_zero": 62.763142758541356,
+      "skew": 7.102227852514122
+    },
+    "ShoppingMall": {
+      "mean": 173.72916912197996,
+      "median": 0.0,
+      "max": 23492.0,
+      "pct_zero": 64.27010238122628,
+      "skew": 12.62756203889759
+    },
+    "Spa": {
+      "mean": 311.1387779083431,
+      "median": 0.0,
+      "max": 22408.0,
+      "pct_zero": 61.244679627286324,
+      "skew": 7.63601988471242
+    },
+    "VRDeck": {
+      "mean": 304.8547912992357,
+      "median": 0.0,
+      "max": 24133.0,
+      "pct_zero": 63.2117795927758,
+      "skew": 7.819731592048683
+    }
+  },
+  "age_stats_full": {
+    "mean": 28.82793046746535,
+    "median": 27.0,
+    "max": 79.0
+  },
+  "cat_levels": {
+    "HomePlanet": [
+      "Earth",
+      "Europa",
+      "Mars"
+    ],
+    "CryoSleep": [
+      "False",
+      "True"
+    ],
+    "Destination": [
+      "55 Cancri e",
+      "PSO J318.5-22",
+      "TRAPPIST-1e"
+    ],
+    "VIP": [
+      "False",
+      "True"
+    ]
+  },
+  "split": {
+    "n_train": 6954,
+    "n_test": 1739,
+    "pct_true_train": 50.35950532067874,
+    "pct_true_test": 50.3737780333525
+  },
+  "foodcourt_train_raw": {
+    "mean": 452.61117647058825,
+    "median": 0.0,
+    "max": 29813.0,
+    "pct_zero": 63.08599367270635
+  },
+  "imputation": {
+    "num_medians": {
+      "Age": 27.0,
+      "RoomService": 0.0,
+      "FoodCourt": 0.0,
+      "ShoppingMall": 0.0,
+      "Spa": 0.0,
+      "VRDeck": 0.0
+    },
+    "cat_modes": {
+      "HomePlanet": "Earth",
+      "CryoSleep": "False",
+      "Destination": "TRAPPIST-1e",
+      "VIP": "False"
+    }
+  },
+  "totalspend_train_raw": {
+    "mean": 1426.5529191832038,
+    "median": 715.0,
+    "max": 35987.0,
+    "skew": 4.4251862138430615
+  },
+  "skew": {
+    "before": {
+      "RoomService": 6.363561174651286,
+      "FoodCourt": 7.376470100884485,
+      "ShoppingMall": 8.187439942461614,
+      "Spa": 7.741961503775469,
+      "VRDeck": 7.572948812204807,
+      "TotalSpend": 4.4251862138430615
+    },
+    "after": {
+      "RoomService": 1.1355486940841706,
+      "FoodCourt": 1.1631530613667709,
+      "ShoppingMall": 1.259316567381579,
+      "Spa": 1.147499113190663,
+      "VRDeck": 1.2023007979846612,
+      "TotalSpend": -0.20015176592072367
+    }
+  },
+  "foodcourt_train_log": {
+    "mean": 1.8825160003349386,
+    "median": 0.0,
+    "max": 10.302733360830375
+  },
+  "features": {
+    "names": [
+      "Age",
+      "RoomService",
+      "FoodCourt",
+      "ShoppingMall",
+      "Spa",
+      "VRDeck",
+      "TotalSpend",
+      "HomePlanet_Earth",
+      "HomePlanet_Europa",
+      "HomePlanet_Mars",
+      "CryoSleep_False",
+      "CryoSleep_True",
+      "Destination_55 Cancri e",
+      "Destination_PSO J318.5-22",
+      "Destination_TRAPPIST-1e",
+      "VIP_False",
+      "VIP_True"
+    ],
+    "n_numeric": 7,
+    "n_onehot": 10,
+    "n_total": 17,
+    "onehot_names": [
+      "HomePlanet_Earth",
+      "HomePlanet_Europa",
+      "HomePlanet_Mars",
+      "CryoSleep_False",
+      "CryoSleep_True",
+      "Destination_55 Cancri e",
+      "Destination_PSO J318.5-22",
+      "Destination_TRAPPIST-1e",
+      "VIP_False",
+      "VIP_True"
+    ]
+  },
+  "final": {
+    "train_shape": [
+      6954,
+      17
+    ],
+    "test_shape": [
+      1739,
+      17
+    ],
+    "train_min": -1.0,
+    "train_max": 1.0,
+    "test_min": -1.0,
+    "test_max": 1.1382785668023274,
+    "train_nan": 0,
+    "test_nan": 0,
+    "test_out_of_range": 2,
+    "test_out_of_range_rows": 2,
+    "test_out_of_range_features": [
+      "ShoppingMall",
+      "VRDeck"
+    ]
+  },
+  "log_illustration": {
+    "p75_raw": 54.75,
+    "raw_max": 29813.0,
+    "scaled_without_log": -0.9963271056250629,
+    "scaled_with_log": -0.21945424199231045,
+    "pct_at_floor": 65.30054644808743
+  }
+}
