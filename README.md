@@ -32,38 +32,45 @@ A perceptron written from scratch (NumPy only) on two 2000-point datasets.
 
 ## Layout
 
+MkDocs Material, published to GitHub Pages by `.github/workflows/deploy.yml` on every push.
+
 ```
-code/                        analysis scripts
-  style.py                   shared matplotlib style and validated palette
-  report_kit.py              shared report stylesheet and HTML helpers
-
-  ex1.py                     data: Figures 1, 1b, 2, 3   -> results/ex1.json
-  ex2.py                     data: Figures 4, 5          -> results/ex2.json
-  ex3.py                     data: Figures 6, 7          -> results/ex3.json
-  build_report.py            renders exercises/data/index.html
-
-  perceptron.py              the perceptron itself, from scratch
-  perceptron_ex1.py          Figures 1, 2, 3      -> results/perceptron1.json
-  perceptron_ex2.py          Figures 4, 5, 6, 6b  -> results/perceptron2.json
-  build_perceptron_report.py renders exercises/perceptron/index.html
-
-data/train.csv               Spaceship Titanic training file (8,693 x 14)
-results/*.json               every computed value, as emitted by the scripts
-exercises/<name>/            the published page and its figures
+mkdocs.yml
+requirements.txt
+docs/
+  index.md                       landing page
+  exercises/
+    data/index.html              the data exercise page (static) + figures/
+    perceptron/
+      index.md                   the report, generated from results/
+      code/                      the sources that produced it
+        perceptron.py            the perceptron itself, from scratch
+        perceptron_ex1.py        Figures 1, 2, 3     -> results/perceptron1.json
+        perceptron_ex2.py        Figures 4, 5, 6, 6b -> results/perceptron2.json
+        build_perceptron_report.py  renders ../index.md
+        style.py                 shared matplotlib style
+      figures/                   the figures the report shows
+      results/                   every computed value, as emitted by the scripts
+code/                            the data exercise's scripts (ex1-3, build_report)
+data/train.csv                   Spaceship Titanic training file (8,693 x 14)
+results/*.json                   the data exercise's computed values
 ```
 
 ## Reproducing
 
 ```bash
-pip install numpy pandas matplotlib scikit-learn
-
-cd code
+pip install -r requirements.txt
 
 # Data exercise
+cd code
 python ex1.py && python ex2.py && python ex3.py && python build_report.py
 
 # Perceptron exercise (NumPy and Matplotlib only)
+cd docs/exercises/perceptron/code
 python perceptron_ex1.py && python perceptron_ex2.py && python build_perceptron_report.py
+
+# Serve the site locally
+mkdocs serve
 ```
 
 The seed is `42` throughout, so runs are reproducible. The report page is *generated* from the JSON result
@@ -71,4 +78,4 @@ files rather than written by hand, so no number in the prose can drift from what
 
 No third-party model is trained anywhere in this repository. The data exercise uses NumPy, pandas, Matplotlib
 and scikit-learn restricted to `PCA`, `train_test_split`, `OneHotEncoder` and `MinMaxScaler`; the perceptron
-exercise uses NumPy and Matplotlib only, with the model written out by hand in `code/perceptron.py`.
+exercise uses NumPy and Matplotlib only, with the model written out by hand in `docs/exercises/perceptron/code/perceptron.py`.

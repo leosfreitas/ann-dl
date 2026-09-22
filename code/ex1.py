@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from style import apply_style, title, SERIES, MARKERS, SURFACE, INK, INK_SOFT, INK_MUTED
 
 apply_style()
-FIG = "../exercises/data/figures"
+FIG = "../docs/exercises/data/figures"
 OUT = {}
 
 MU = np.array([[2.0, 3.0], [5.0, 6.0], [8.0, 1.0], [15.0, 4.0]])

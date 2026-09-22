@@ -1,4 +1,4 @@
-"""Render exercises/data/index.html from the JSON produced by ex1/ex2/ex3.
+"""Render docs/exercises/data/index.html from the JSON produced by ex1/ex2/ex3.
 
 Every number on the page is interpolated from those files, so the prose can
 never drift away from what the code actually computed.
@@ -15,7 +15,7 @@ e1 = json.load(open(R / "ex1.json"))
 e2 = json.load(open(R / "ex2.json"))
 e3 = json.load(open(R / "ex3.json"))
 
-OUT = pathlib.Path("../exercises/data/index.html")
+OUT = pathlib.Path("../docs/exercises/data/index.html")
 REPO = "https://github.com/leosfreitas/ann-dl"
 
 

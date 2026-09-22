@@ -7,7 +7,7 @@ from sklearn.decomposition import PCA
 from style import apply_style, title, SERIES, MARKERS, SURFACE, INK, INK_SOFT, INK_MUTED
 
 apply_style()
-FIG = "../exercises/data/figures"
+FIG = "../docs/exercises/data/figures"
 rng = np.random.default_rng(42)
 N = 500
 

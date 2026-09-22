@@ -10,7 +10,7 @@ from style import apply_style, title, SERIES, SURFACE, INK, INK_SOFT
 
 apply_style()
 pd.set_option("future.no_silent_downcasting", True)
-FIG = "../exercises/data/figures"
+FIG = "../docs/exercises/data/figures"
 SEED = 42
 res = {}
 

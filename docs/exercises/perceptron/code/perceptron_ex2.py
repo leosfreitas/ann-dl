@@ -1,6 +1,7 @@
 """Exercise 2 -- The same perceptron on overlapping data.  Figures 4, 5, 6."""
 
 import json
+import os
 import math
 import numpy as np
 import matplotlib.pyplot as plt
@@ -8,7 +9,10 @@ from style import apply_style, title, SERIES, INK, INK_SOFT, INK_MUTED
 from perceptron import fit, predict, accuracy
 
 apply_style()
-FIG = "../exercises/perceptron/figures"
+FIG = "../figures"
+RES = "../results"
+for _d in (FIG, RES):
+    os.makedirs(_d, exist_ok=True)
 OUT = {}
 
 MU0, MU1 = np.array([3.0, 3.0]), np.array([4.0, 4.0])
@@ -252,7 +256,7 @@ ax.legend(loc="lower right", fontsize=8.0, ncol=2)
 fig.savefig(FIG + "/fig6b_updates.png")
 plt.close(fig)
 
-json.dump(OUT, open("../results/perceptron2.json", "w"), indent=2)
+json.dump(OUT, open(RES + "/perceptron2.json", "w"), indent=2)
 
 print("final  -> w={0}, b={1:.4f}, acc={2:.2f}%, epochs={3}, converged={4}".format(
     w, b, res["acc"] * 100, res["epochs"], res["converged"]))

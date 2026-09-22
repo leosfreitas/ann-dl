@@ -1,0 +1,55 @@
+site_name: ann-dl
+site_description: Artificial Neural Networks & Deep Learning — Insper 2026.2
+site_url: https://leosfreitas.github.io/ann-dl/
+repo_url: https://github.com/leosfreitas/ann-dl
+edit_uri: ""
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - Exercises:
+      - Data: exercises/data/index.html
+      - Perceptron: exercises/perceptron/index.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.snippets:
+      base_path: ["."]
+      check_paths: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/leosfreitas

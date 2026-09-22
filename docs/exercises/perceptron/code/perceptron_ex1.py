@@ -1,13 +1,17 @@
 """Exercise 1 -- A perceptron on linearly separable data.  Figures 1, 2, 3."""
 
 import json
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 from style import apply_style, title, SERIES, INK, INK_SOFT, INK_MUTED
 from perceptron import fit, predict, accuracy
 
 apply_style()
-FIG = "../exercises/perceptron/figures"
+FIG = "../figures"
+RES = "../results"
+for _d in (FIG, RES):
+    os.makedirs(_d, exist_ok=True)
 OUT = {}
 
 MU0, MU1 = np.array([1.5, 1.5]), np.array([5.0, 5.0])
@@ -232,7 +236,7 @@ ax.legend(loc="lower right")
 fig.savefig(FIG + "/fig3_accuracy.png")
 plt.close(fig)
 
-json.dump(OUT, open("../results/perceptron1.json", "w"), indent=2)
+json.dump(OUT, open(RES + "/perceptron1.json", "w"), indent=2)
 
 print("eta=0.01 -> w={0}, b={1:.4f}, epochs={2}, acc={3:.2f}%".format(
     w, b, res["epochs"], res["acc"] * 100))
