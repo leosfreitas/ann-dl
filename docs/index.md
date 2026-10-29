@@ -22,6 +22,11 @@ scripts emit — so nothing on a page can drift away from what the code actually
     A perceptron written from scratch on separable and overlapping Gaussians: why one run stops by
     itself, why the other never can, and what the pocket algorithm is for.
 
+-   **[MLP](exercises/mlp/index.md)**
+
+    One backpropagation step by hand, then a from-scratch NumPy MLP on a problem no line can solve,
+    the same code on three classes, and a controlled test of whether a second hidden layer pays off.
+
 </div>
 
 ## Reproducing

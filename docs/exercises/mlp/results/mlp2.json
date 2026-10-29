@@ -1,0 +1,27 @@
+{
+  "n_train": 800,
+  "n_test": 200,
+  "class_counts": [
+    500,
+    500
+  ],
+  "baseline_test_acc": 0.475,
+  "baseline_train_acc": 0.5275,
+  "baseline_coef": [
+    0.02963345947760092,
+    0.0014757607039442178
+  ],
+  "baseline_intercept": -0.003097664893185566,
+  "sizes": [
+    2,
+    8,
+    1
+  ],
+  "n_params": 33,
+  "eta": 0.1,
+  "epochs": 2000,
+  "loss_first": 0.7717123909745157,
+  "loss_last": 0.11250212317525651,
+  "train_acc": 0.9625,
+  "test_acc": 0.925
+}
