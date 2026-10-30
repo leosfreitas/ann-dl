@@ -8,6 +8,8 @@ Exercises for **Artificial Neural Networks & Deep Learning** — Insper, 2026.2.
 |---|---|
 | Data | https://leosfreitas.github.io/ann-dl/exercises/data/ |
 | Perceptron | https://leosfreitas.github.io/ann-dl/exercises/perceptron/ |
+| MLP | https://leosfreitas.github.io/ann-dl/exercises/mlp/ |
+| VAE | https://leosfreitas.github.io/ann-dl/exercises/vae/ |
 
 ## Exercise: Data
 
@@ -30,6 +32,16 @@ A perceptron written from scratch (NumPy only) on two 2000-point datasets.
 2. **Overlapping data** — Gaussians at `[3, 3]` and `[4, 4]`, covariance `1.5I`. Never converges: the
    final weights score 50.05% while the pocket holds 72.85%, against a 72.60% ceiling for any straight line.
 
+## Exercise: VAE
+
+A variational autoencoder on MNIST, with the two terms of the loss logged separately throughout.
+
+1. **d = 16** -- encoder 784-512-256, two heads, mirrored decoder; Bernoulli reconstruction and the
+   closed-form Gaussian KL written out by hand, trained 20 epochs with Adam. The KL *rises* over the
+   first epochs while the total falls -- the optimiser buying latent capacity.
+2. **d = 2** -- the same model with a latent space you can draw: the encoded test set, the decoded
+   plane on an inverse-normal-CDF grid, and pixel-space against latent-space interpolation.
+
 ## Layout
 
 MkDocs Material, published to GitHub Pages by `.github/workflows/deploy.yml` on every push.
@@ -51,6 +63,20 @@ docs/
         style.py                 shared matplotlib style
       figures/                   the figures the report shows
       results/                   every computed value, as emitted by the scripts
+    mlp/
+      index.md                 the report
+      code/                    mlp.py (from scratch) + mlp_ex1-4.py + style.py
+      figures/ results/
+    vae/
+      index.md                 the report, generated from results/
+      code/
+        vae.py                 model, reparameterization, both loss terms, training loop
+        mnist_data.py          MNIST and the fixed 50k/10k split
+        vae_ex1.py             Figures 1, 2, 3 -> results/vae1.json
+        vae_ex2.py             Figures 4, 5, 6 -> results/vae2.json
+        build_vae_report.py    renders ../index.md
+        style.py               shared matplotlib style
+      figures/ results/
 code/                            the data exercise's scripts (ex1-3, build_report)
 data/train.csv                   Spaceship Titanic training file (8,693 x 14)
 results/*.json                   the data exercise's computed values
@@ -69,12 +95,20 @@ python ex1.py && python ex2.py && python ex3.py && python build_report.py
 cd docs/exercises/perceptron/code
 python perceptron_ex1.py && python perceptron_ex2.py && python build_perceptron_report.py
 
+# VAE exercise (PyTorch; MNIST downloads itself on first run)
+cd docs/exercises/vae/code
+python vae_ex1.py && python vae_ex2.py && python build_vae_report.py
+
 # Serve the site locally
 mkdocs serve
 ```
 
 The seed is `42` throughout, so runs are reproducible. The report page is *generated* from the JSON result
 files rather than written by hand, so no number in the prose can drift from what the code computed.
+
+The VAE exercise is the only one that uses PyTorch, and only for the plain `Linear` layers, `Adam`
+and autograd: the reparameterization, both terms of the loss and the sampling are written out in
+`docs/exercises/vae/code/vae.py`. No library VAE class and no `torch.distributions.kl_divergence`.
 
 No third-party model is trained anywhere in this repository. The data exercise uses NumPy, pandas, Matplotlib
 and scikit-learn restricted to `PCA`, `train_test_split`, `OneHotEncoder` and `MinMaxScaler`; the perceptron

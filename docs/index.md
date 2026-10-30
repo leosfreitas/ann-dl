@@ -27,6 +27,11 @@ scripts emit — so nothing on a page can drift away from what the code actually
     One backpropagation step by hand, then a from-scratch NumPy MLP on a problem no line can solve,
     the same code on three classes, and a controlled test of whether a second hidden layer pays off.
 
+-   **[VAE](exercises/vae/index.md)**
+
+    A variational autoencoder on MNIST, with the reconstruction and KL terms logged apart: what the
+    prior buys, what a two-dimensional latent space costs, and what the decoded plane looks like.
+
 </div>
 
 ## Reproducing

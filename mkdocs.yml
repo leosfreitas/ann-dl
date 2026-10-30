@@ -33,6 +33,7 @@ nav:
       - Data: exercises/data/index.html
       - Perceptron: exercises/perceptron/index.md
       - MLP: exercises/mlp/index.md
+      - VAE: exercises/vae/index.md
 
 markdown_extensions:
   - admonition

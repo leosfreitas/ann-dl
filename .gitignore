@@ -2,3 +2,7 @@ __pycache__/
 *.pyc
 .DS_Store
 site/
+
+# MNIST downloads itself on first run; trained weights are rebuilt by the script
+docs/exercises/vae/code/data/
+docs/exercises/vae/code/*.pt
